@@ -1,0 +1,17 @@
+ngx_addon_name=ngx_http_monitor_module
+
+HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES ngx_http_monitor_module"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
+    $ngx_addon_dir/ngx_http_monitor_module.c \
+    $ngx_addon_dir/ngx_http_monitor_queue.c \
+    $ngx_addon_dir/ngx_http_monitor_message.c \
+    $ngx_addon_dir/ngx_http_monitor_sender.c"
+
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
+    $ngx_addon_dir/ngx_http_monitor_module.h \
+    $ngx_addon_dir/ngx_http_monitor_queue.h \
+    $ngx_addon_dir/ngx_http_monitor_message.h \
+    $ngx_addon_dir/ngx_http_monitor_sender.h"
+
+CORE_LIBS="$CORE_LIBS -lpthread"
